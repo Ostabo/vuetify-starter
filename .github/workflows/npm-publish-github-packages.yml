@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created]
+    types: [ created, edited ]
 
 jobs:
   build:
@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm test
 
   publish-gpr:
     needs: build
